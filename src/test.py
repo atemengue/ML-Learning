@@ -61,8 +61,15 @@ df1 = pd.DataFrame({"total": gb})
 # plt.pie(df1)
 
 # affichage du nuage de points
-plt.scatter(df["a"], df["b"])
-plt.show()
+# plt.scatter(df["a"], df["b"])
+# plt.show()
 
 
 # matrice de colleration
+df = df.drop(labels=["nom","type"], axis=1)
+print(df.head())
+
+# calcul de la colleration
+matrice = df.corr()
+sns.heatmap(matrice, annot=True)
+plt.show()

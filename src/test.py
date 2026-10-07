@@ -18,7 +18,7 @@ df = pd.DataFrame([nom, type, x, y, z]).T # utilisation la transposition
 df.columns=['nom','type','a','b','c']
 
 # importance de prendre un echantillon
-print(df.head(10))
+# print(df.head(10))
 # print(df)
 
 # df.info()
@@ -38,4 +38,24 @@ df["c"] = df["c"].astype(int)
 #desribe pour la description de la donnee.
 # print(df.describe())
 
-print(df["a"].describe())
+# print(df["a"].describe())
+
+# visualisation partie 01
+# plt.hist(df['nom'])
+# plt.title("Frequences des noms")
+# plt.show()
+
+# creation d'un graphique pour affiche en code
+gb = df.groupby("type")["c"].sum()
+# print(gb)
+
+df1 = pd.DataFrame({"total": gb})
+
+# print(df1)
+
+plt.pie(df1["total"],labels=df1.index, autopct='%1.1f%%')
+plt.title("distribution des types")
+plt.savefig("pie.disbribution.png")
+plt.close()
+
+# plt.pie(df1)

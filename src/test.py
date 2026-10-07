@@ -73,3 +73,8 @@ print(df.head())
 matrice = df.corr()
 sns.heatmap(matrice, annot=True)
 plt.show()
+
+# place au statistique
+print(df.isnull().values.any())
+print(df.isnull().sum())
+print(df.isnull().sum().sum())

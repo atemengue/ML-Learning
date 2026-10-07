@@ -53,9 +53,16 @@ df1 = pd.DataFrame({"total": gb})
 
 # print(df1)
 
-plt.pie(df1["total"],labels=df1.index, autopct='%1.1f%%')
-plt.title("distribution des types")
-plt.savefig("pie.disbribution.png")
-plt.close()
+# plt.pie(df1["total"],labels=df1.index, autopct='%1.1f%%')
+# plt.title("distribution des types")
+# plt.savefig("pie.disbribution.png")
+# plt.close()
 
 # plt.pie(df1)
+
+# affichage du nuage de points
+plt.scatter(df["a"], df["b"])
+plt.show()
+
+
+# matrice de colleration
